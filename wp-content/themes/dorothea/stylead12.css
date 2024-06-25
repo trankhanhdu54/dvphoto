@@ -1,0 +1,580 @@
+/*
+Theme Name: Dorothea
+Theme URI: http://shtheme.com/demosd/dorothea
+Author: Shtheme
+Author URI: https://themeforest.net/user/shtheme
+Description: In 2021, our default theme lets you create a responsive magazine website with a sleek, modern design. Feature your favorite homepage content in either a grid or a slider. Use the three widget areas to customize your website, and change your content's layout with a full-width page template and a contributor page to show off your authors. Creating a magazine website with WordPress has never been easier.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain: dorothea
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* ========TABLE OF CONTENTS==========
+00. Body, links, hgroup, paragraphs, general styles
+01. Fixed header & Navigation
+02. Section Intro (Home)
+03. Section About
+04. Section Resume
+05. Section Portfolio
+06. Section Blog
+07. Section Contact
+08. Footer
+09. Loader
+10. Responsive design
+
+/*--------------------------------------------------
+    00. Body, links, hgroup, paragraphs, general styles
+---------------------------------------------------*/
+
+h3.comment-reply-title {
+  color: #000;
+  font-family: 'Cutive Mono', monospace;
+  font-weight: 400;
+  font-size: 23px;
+  text-transform: capitalize;
+}
+
+.comment-respond form input[type="email"] {
+    background: #f6f6f6;
+    color: #777;
+    border-radius: 0px;
+}
+
+p.comment-form-cookies-consent {
+  display: none;
+}
+
+.comment-respond form p.form-submit {
+  margin-left: 15px;
+}
+
+.comments-area .comments-title {
+  color: #000;
+  font-size: 23px;
+}
+
+.single-content {
+  margin-bottom: 30px;
+}
+
+p.logged-in-as {
+  margin-left: 15px;
+  margin-bottom: 25px;
+}
+
+p.logged-in-as a {
+  color: #000;
+}
+
+.comment-list ul.children {
+  margin-left: 80px;
+}
+
+h3.name a {
+  color: #000;
+  text-transform: capitalize;
+}
+
+.dorothea-pagination-wrap li span {
+    background: transparent;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #777;
+    font-weight: 400;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid #000;
+    color: #000;
+}
+
+button.btn-contact {
+    text-shadow: none;
+    padding: 12px 30px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    font-weight: 400;
+    border: none;
+    color: #000;
+    -webkit-transition: background-color .15s ease-out;
+    transition: background-color .15s ease-out;
+    background-color: #f6f6f6;
+    margin-top: 15px;
+    font-size: 16px;
+    letter-spacing: 0px;
+    border-radius: 30px;
+}
+
+button.btn-contact:hover {
+    background-color: #000;
+}
+
+button.btn-contact a {
+  color: #000;
+}
+
+button.btn-contact:hover a {
+    color: #fff;
+}
+
+.logged-in header.dorothea-header, .logged-in .dorothea-header.scrolled {
+  top: 32px;
+}
+
+.logged-in div#home .flexslider {
+  margin-top: -32px;
+}
+
+.search-custom form input[type="search"] {
+    display: inline-block;
+    max-width: 70%;
+}
+
+.search-custom form input[type="search"]:focus {
+    background-color: #fff;
+    color: #000;
+}
+
+
+.page-template-dark-feedback-template .your-message .form-control:focus{
+  background: #101010;
+  color: #999;
+}
+
+button.dark-btn {
+  text-shadow: none;
+  padding: 12px 30px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  font-weight: 400;
+  border: none;
+  color: #999;
+  -webkit-transition: background-color .15s ease-out;
+  transition: background-color .15s ease-out;
+  background-color: #101010;
+  margin-top: 15px;
+  font-size: 16px;
+  letter-spacing: 0px;
+  border-radius: 30px;
+}
+
+button.dark-btn a {
+  color: #999;
+}
+
+button.dark-btn:hover {
+  background-color: #101010;
+  color: #fff;
+}
+
+@media (min-width: 601px) and (max-width: 782px) {
+  .logged-in header.dorothea-header, .logged-in .dorothea-header.scrolled {
+    top: 46px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logged-in header.dorothea-header {
+    top: 46px;
+  }
+
+  .logged-in .dorothea-header.scrolled {
+    top: 0px;
+  }
+}
+
+.dorothea-sidebar-part .single-widget {
+    background: #faf8f7;
+    padding: 30px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.dorothea-sidebar-part .widget_search form, .search-custom form {
+    position: relative;
+}
+
+.dorothea-sidebar-part .widget_search form input, .search-custom form input {
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    background: #fff;
+    margin-bottom: 0;
+}
+
+.dorothea-sidebar-part .widget_search form input:focus, .search-custom form input:focus {
+    outline: none;
+}
+
+.dorothea-sidebar-part .widget_search form button, .search-custom form button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    color: #000;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+    padding-top: 15px;
+    margin-top: 0px;
+}
+
+.dorothea-sidebar-part .widget_search form button:focus, .search-custom form button:focus {
+  outline: none;
+}
+
+.dorothea-sidebar-part .recent-posts ul.recent {
+  padding-left: 0px;
+}
+
+.dorothea-sidebar-part .recent-posts ul li {
+    font-size: 15px;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+    display: block;
+    overflow: hidden;
+}
+
+.dorothea-sidebar-part .recent-posts .widget-title {
+    margin-bottom: 30px;
+}
+
+.dorothea-sidebar-part .recent-posts .widget-title h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+    text-transform: capitalize;
+    border-bottom: 1px solid #f1eaea;
+    line-height: 1.75em;
+}
+
+.dorothea-sidebar-part .recent-posts .recent .thum {
+    width: 90px;
+    overflow: hidden;
+    float: left;
+}
+
+.dorothea-sidebar-part .recent-posts .recent a {
+    display: block;
+    margin-left: 105px;
+    margin-top: 10px;
+    color: #000;
+    font-size: 16px;
+}
+
+.dorothea-sidebar-part .widget_categories ul {
+  padding-left: 0px;
+}
+
+.dorothea-sidebar-part .widget_categories ul li {
+    font-size: 15px;
+    line-height: 1.5em;
+    margin-bottom: 10px;
+}
+
+.dorothea-sidebar-part .widget_categories ul li a:before {
+    content: "\e649";
+    font-family: 'themify';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    font-size: 9px;
+    margin-right: 10px;
+    transition: all .5s;
+}
+
+.dorothea-sidebar-part .widget_categories ul li:hover a:before {
+  margin-right: 7px;
+  margin-left: 3px;
+}
+
+.dorothea-sidebar-part .widget_categories ul li a {
+    font-size: 15px;
+    color: #000;
+}
+
+.dorothea-sidebar-part ul.wp-tag-cloud {
+  padding-left: 0px;
+}
+
+.dorothea-sidebar-part ul.wp-tag-cloud li {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #000;
+    padding: 7px 17px;
+    border-radius: 0px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    margin: 5px;
+    margin-right: 0px;
+}
+
+.dorothea-sidebar-part ul.wp-tag-cloud li:hover {
+  background: #000;
+}
+
+.dorothea-sidebar-part ul.wp-tag-cloud li a {
+    font-size: 14px!important;
+    color: #000;
+}
+
+.dorothea-sidebar-part ul.wp-tag-cloud li:hover a {
+  color: #fff;
+}
+
+
+.dorothea-sidebar-part .single-widget h3 {
+  font-size: 23px;
+}
+
+.blog-section .blog-entry h3 a {
+  font-size: 28px;
+}
+
+.blog-section .blog-entry .desc span {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #000 !important;
+}
+
+.blog-section .blog-entry .desc p {
+  color: #333;
+}
+
+.blog-section .blog-entry .desc a.underline-text {
+  color: #333;
+}
+
+.blog-section .blog-entry .desc a.underline-text:hover {
+  color: #000;
+}
+
+.blog-section .search-custom form input[type="search"] {
+    display: inline-block;
+    width: 70%;
+    height: 42px;
+    border: 1px solid #ccc;
+}
+
+.blog-section .search-custom form button {
+    position: inherit;
+    margin-left: -50px;
+    top: 3px;
+}
+
+.error-page-content {
+    text-align: center;
+}
+
+.error-page-content h1 {
+    font-size: 8rem;
+    font-weight: 600;
+    line-height: 1em;
+}
+
+.error-page-content h2 {
+    font-size: 45px;
+    line-height: 1em;
+}
+
+.error-page-content div.text {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.error-page-content a.theme-btn {
+    text-shadow: none;
+    padding: 12px 27px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    line-height: 1.75em;
+    font-weight: 400;
+    border-style: solid;
+    color: #fff;
+    border-width: 0;
+    -webkit-transition: background-color .15s ease-out;
+    transition: background-color .15s ease-out;
+    background-color: #000;
+    margin-top: 20px;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 600;
+}
+.col-md-8.animate-box .blog-entry .desc a.underline-text:after {
+    content: '';
+    width: 30px;
+    height: 1px;
+    background: #a2783a;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+}
+.blog-section .col-md-8.animate-box .blog-entry .desc a.underline-text{
+    position: relative;
+    padding-left: 40px;
+    color: #a2783a;
+}
+.blog-section .col-md-8.animate-box .blog-entry .desc a.underline-text i{
+   display: none;
+}
+.blog-section .col-md-8.animate-box .blog-entry .desc a.underline-text:hover{
+  color: #000;
+}
+.section-padding.dorothea-gallery{
+	padding-bottom: 100px!important;
+	padding-top: 80px!important;
+}
+#pricing, #faqs{
+	padding-bottom: 100px!important;
+	padding-top: 100px!important;
+}
+.section-padding {
+	padding: 80px 0;
+}
+#services{
+	padding-top: 100px!important;
+}
+
+.elementor-lightbox {
+  display: none!important;
+}
+
+.dark-side {
+  background: #000;
+}
+
+.dark-side p, .dark-side ol.comment-list li.comment .comment-meta, .dark-side ol.comment-list li.comment .reply a {
+  color: #999;
+}
+
+.dark-side h2.dorothea-heading {
+  color: #fff;
+}
+
+.dark-side .dorothea-photos .dorothea-photo-item:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.dark-side .dorothea-photos .dorothea-photo-item:hover:after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dark-side ol.comment-list li.comment .reply a {
+  color: #999;
+}
+
+.dark-side span.dorothea-heading-meta, .dark-side ol.comment-list li.comment .comment-meta a, 
+.dark-side ol.comment-list li.comment p {
+  color: #999;
+}
+
+.dark-side h2.comments-title, .dark-side ol.comment-list li.comment .comment-author .name,
+.dark-side h3.dorothea-post-heading, .dark-side h3.comment-reply-title,
+.dark-side p.logged-in-as a, .dark-side h3.name a {
+  color: #fff;
+}
+
+.dark-side .comment-respond form input, 
+.dark-side .comment-respond form textarea {
+    color: #999!important;
+    background: #101010!important;
+  }
+
+.single-post.dark-header .dorothea-header.scrolled,
+.single-service.dark-header .dorothea-header.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.single-post.dark-header .dorothea-nav-toggle i,
+.single-post.dark-header  .dorothea-nav-toggle i:before,
+.single-post.dark-header  .dorothea-nav-toggle i:after,
+.single-service.dark-header .dorothea-nav-toggle i,
+.single-service.dark-header  .dorothea-nav-toggle i:before,
+.single-service.dark-header  .dorothea-nav-toggle i:after {
+  background: #fff!important;
+}
+
+.single-post.dark-header .dorothea-menu,
+.single-service.dark-header .dorothea-menu {
+  background: #000;
+}
+
+.single-post.dark-header .dorothea-menu ul > li a,
+.single-service.dark-header .dorothea-menu ul > li a {
+  color: #fff;
+}
+
+.single-post.dark-header #dorothea-footer .top-fade,
+.single-service.dark-header #dorothea-footer .top-fade {
+  background: linear-gradient(
+    0deg
+    , rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.single-post.dark-header #dorothea-footer .left-fade, 
+.single-service.dark-header #dorothea-footer .left-fade {
+    background: linear-gradient(
+270deg
+, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%); */
+}
+
+.single-post.dark-header #dorothea-footer a, .single-post.dark-header #dorothea-footer a.underline-text,
+.single-post.dark-header #dorothea-footer ul li, .single-post.dark-header #dorothea-footer i.ti-more,
+.single-service.dark-header #dorothea-footer a, .single-service.dark-header #dorothea-footer a.underline-text,
+.single-service.dark-header #dorothea-footer ul li, .single-service.dark-header #dorothea-footer i.ti-more {
+  color: #fff;
+}
+
+.dark-side .comment-respond form input[type="submit"]:hover, .single-post.dark-header #dorothea-footer .credits-row li a:hover,
+.single-service.dark-header #dorothea-footer .credits-row li a:hover {
+  color: #fff!important;
+}
+
+.services-prev-next.dark-side {
+  padding-bottom: 60px;
+  margin-bottom: 0px;
+}
+
+.dark-side.services-prev-next a:hover {
+  color: #999;
+}
+
+.single-post.dark-header .preloader-bg, .single-service.dark-header .preloader-bg,
+.single-post.dark-header #preloader, .single-service.dark-header #preloader {
+  background: #000;
+}
+.js.elementor-html .animate-box {
+    opacity: 1!important;
+}
